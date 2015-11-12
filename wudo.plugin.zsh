@@ -6,7 +6,7 @@ fi
 set ZSH=`echo $ZSH`
 
 function wudo {
-    sudo $1
+    sudo $*
     play $ZSH/plugins/wudo/wudo.mp3 &> /dev/null
 }
 
