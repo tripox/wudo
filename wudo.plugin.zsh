@@ -1,13 +1,12 @@
 if [[ -z $commands[play] ]]; then
-    echo 'Sox is not installed. Please install sox first.'
-    return -1
+  echo 'Sox is not installed. Please install sox first.'
+  return -1
 fi
 
-set ZSH=`echo $ZSH`
-
-function wudo {
-    sudo $*
-    play $ZSH/plugins/wudo/wudo.mp3 &> /dev/null
+function wudo() {
+  sudo $*
+  play `echo $ZSH`/plugins/wudo/wudo.mp3 &> /dev/null
 }
 
 alias sudo=wudo
+compdef _sudo wudo
