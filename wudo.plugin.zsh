@@ -3,9 +3,11 @@ if [[ -z $commands[play] ]]; then
   return -1
 fi
 
+DIR=`dirname $0`
+
 function wudo() {
   sudo $*
-  play `echo $ZSH`/plugins/wudo/wudo.mp3 &> /dev/null
+  play $DIR/wudo.mp3 &> /dev/null
 }
 
 alias sudo=wudo
