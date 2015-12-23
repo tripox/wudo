@@ -4,10 +4,15 @@ if [[ -z $commands[play] ]]; then
 fi
 
 DIR=`dirname $0`
+MONTH=`date +%m`
 
 function wudo() {
   sudo $*
-  play $DIR/wudo.mp3 &> /dev/null
+  if [[ $MONTH -eq "12" ]]; then 
+    (play -q $DIR/wudo-christmas.wav &)
+  else
+    (play -q $DIR/wudo.mp3 &)
+  fi
 }
 
 alias sudo=wudo
