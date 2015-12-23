@@ -10,6 +10,7 @@ function wudo() {
   sudo $*
   if [[ $MONTH -eq "12" ]]; then 
     (play -q $DIR/wudo-christmas.wav &)
+    (play -q $DIR/wudo.mp3 &)
   else
     (play -q $DIR/wudo.mp3 &)
   fi
